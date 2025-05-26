@@ -6,7 +6,7 @@ import Fevrouite from '../pages/Fevrouite'
 import Create from '../pages/Create'
 import Update from '../pages/Update'
 import About from '../pages/About'
-
+import RecipeDetails from '../pages/RecipeDetails' // New component
 
 const MainRoutes = () => {
   return (
@@ -14,12 +14,12 @@ const MainRoutes = () => {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/recipes' element={<Recipes />} />
-        <Route path='/create' element={<Create />} />
-           <Route path='/favourite' element={<Fevrouite />} />
-              <Route path='/about' element={<About/>} />
+        <Route path='/recipes/details/:id' element={<RecipeDetails />} /> {/* Fixed */}
+        <Route path='/recipes/update-recipe/:id' element={<Update />} />
+        <Route path='/recipes/create-recipe' element={<Create />} /> {/* Fixed path */}
+        <Route path='/favourite' element={<Fevrouite />} />
+        <Route path='/about' element={<About />} />
       </Routes>
-
-
     </div>
   )
 }
